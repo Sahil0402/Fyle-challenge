@@ -18,7 +18,8 @@
         <div class="container-fluid">
             <a class="navbar-brand">GitGlance</a>
             <form class="d-flex" role="search" id="inputFrom">
-                <input class="form-control me-2" type="search" placeholder="Search" id="inputField" aria-label="Search" />
+                <input class="form-control me-2" type="search" placeholder="Search" id="inputField"
+                    aria-label="Search" />
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
@@ -70,15 +71,24 @@
                 </div> -->
                 </div>
             </div>
-            <div id="pagination" class="pagination-controls"></div>
-            <div id="repoCountSelection" class="repo-count-dropdown">
-                <select id="repoCountDropdown" class="form-select">
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
+            <div id="pagination" class="pagination-controls">
+                <div id="pageNumbers" class="pagination-numbers">
+                    <!-- Dynamically generated page buttons will be here -->
+                </div>
+                <div class="page-change-controls">
+                    <button id="olderBtn" class="page-change-btn">Older</button>
+                    <div id="repoCountSelection" class="repo-count-dropdown">
+                        <select id="repoCountDropdown" class="form-select">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <button id="newerBtn" class="page-change-btn">Newer</button>
+                </div>
             </div>
+
         </div>
     </main>
 

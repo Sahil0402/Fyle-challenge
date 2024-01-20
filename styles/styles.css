@@ -5,8 +5,7 @@
   --primary-light-color: #e7f3ff;
 
   /* Neutral colors */
-  --background-color: #f4f4f4;
-  --text-color: black;
+  --background-color: #ffff;
   --border-color: #e1e1e1;
   --skeleton-base-color: #ddd;
   --skeleton-shimmer-color: #eee;
@@ -34,16 +33,11 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 0.875rem;
-  color: var(--text-color);
-  
+  color: black;
+  scrollbar-width: none;
 }
-body {
-  scrollbar-width: none; 
-}
-
-
 body::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .profile-card {
@@ -76,12 +70,13 @@ body::-webkit-scrollbar {
 .user-details h1 {
   margin: 0;
   padding: 0.125rem 0;
-  color: var(--text-color);
+  color: black;
   font-size: 1.5rem;
 }
 
-.githubCon, .location{
-  display:none;
+.githubCon,
+.location {
+  display: none;
 }
 
 .bio,
@@ -90,13 +85,13 @@ body::-webkit-scrollbar {
 .githubCon {
   margin: 0;
   padding: 0.125rem 0;
-  color: var(--text-color);
+  color: black;
   font-size: 1rem;
 }
 
 .twitter a,
 .githubCon a {
-  color: var(--text-color);
+  color: black;
   text-decoration: none;
 }
 
@@ -175,7 +170,6 @@ body::-webkit-scrollbar {
 .skeleton-loader {
   margin: 10px;
   padding: 10px;
-
 }
 
 .avatar-skeleton,
@@ -222,50 +216,46 @@ body::-webkit-scrollbar {
 
 .pagination-controls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin-top: 20px;
+  gap: 20px;
+}
+.page-change-controls {
+  display: flex;
 }
 
 .pagination-controls button,
 .pagination-controls select {
-  margin: 0 10px;
-}
-
-.hide {
-  display: none;
-}
-
-.pagination-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination-controls button {
-  margin: 0;
+  margin: 0 -1px;
   padding: 5px 10px;
-  color: var(--primary-color);
-  background-color: white;
   border: 1px solid var(--border-color);
+  background-color: white;
+  color: var(--primary-color);
   cursor: pointer;
 }
-
-.pagination-controls button:first-child {
+.page-change-btn {
+  border-radius: 5px;
+}
+.pageBtns:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.pagination-controls button:last-child {
+.pageBtns:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.pagination-controls button:hover {
+.pagination-controls button:hover,
+.pagination-controls select:hover {
   background-color: var(--hover-button-bg-color);
   color: var(--hover-button-text-color);
 }
 
+.pagination-controls button:disabled,
 .pagination-controls button.disabled {
   color: var(--disabled-button-text-color);
   background-color: var(--disabled-button-bg-color);
@@ -281,32 +271,34 @@ body::-webkit-scrollbar {
 
 /* Dropdown Styling */
 .repo-count-dropdown {
-  margin: 20px 0;
-  text-align: center;
+  margin: 0 10px; /* Adjusts margin around the dropdown */
 }
 
 #repoCountDropdown {
-  display: inline-block; /* Aligns dropdown inline */
-  width: 70px; /* Adjust width as needed */
-  padding: 5px 10px;
-  border-radius: 5px; /* Rounded corners */
-  border: 1px solid var(--primary-color); /* Border color */
+  border: 1px solid var(--primary-color);
+  width: 70px;
   background-color: white;
-  color: var(--primary-color); /* Text color */
+  color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3); /* Subtle shadow for depth */
   transition: all 0.3s ease; /* Smooth transition for interactions */
 }
 
 #repoCountDropdown:hover,
 #repoCountDropdown:focus {
-  background-color: var(--primary-light-color); /* Light blue background on hover/focus */
-  border-color: var(--primary-dark-color); /* Darker border on hover/focus */
+  background-color: var(--primary-light-color);
+  border-color: var(--primary-dark-color);
   box-shadow: 0 2px 6px rgba(0, 123, 255, 0.5);
 }
 
 /* Adjustments for small screens */
 @media (max-width: 576px) {
+  .page-change-controls,
+  #pageNumbers {
+    justify-content: space-between; /* Spreads out controls on small screens */
+  }
+
   #repoCountDropdown {
-    width: 100%; /* Full width on small screens */
+    width: auto; /* Allows natural width on small screens */
+    margin-top: 10px; /* Adds space above the dropdown */
   }
 }
