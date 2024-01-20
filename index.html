@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Profile</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar bg-dark bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">GitGlance</a>
+            <form class="d-flex" role="search" id="inputFrom">
+                <input class="form-control me-2" type="search" placeholder="Search" id="inputField" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <main>
+        <div class="profile-card">
+            <div class="skeleton-loader">
+                <div class="avatar-skeleton">
+                </div>
+                <div class="text-skeleton short"></div>
+                <div class="text-skeleton"></div>
+                <div class="text-skeleton"></div>
+                <div class="text-skeleton half"></div>
+            </div>
+
+            <div class="user-info">
+                <div class="avatar-container">
+                    <img src="" alt="User Image" class="user-image" id="userImage">
+                </div>
+                <div class="user-details">
+                    <h1 id="userName"></h1>
+                    <div class="bio" id="userBio"></div>
+                    <div class="location">
+                        <img src="./assets/location.png" width="18px" alt="location">
+                        <span class="country" id="userCountry"></span>
+                    </div>
+                    <span class="twitter">
+                        <a href="" target="_blank" id="twitterHandle"></a>
+                    </span>
+                </div>
+            </div>
+            <div class="githubCon">
+                <img src="./assets/link.png" alt="">
+                <a href="" target="_blank" id="githubURL"></a>
+            </div>
+            <div class="repositories">
+                <div class="row">
+                    <!-- <div class="col-12 col-sm-6">
+                    <div class="repo">
+                        <h2 id="repoName">Heroes</h2>
+                        <p id="repoDescription">Heroes description goes here</p>
+                        <div class="tags">
+                            <span class="tag">javascript</span>
+                            <span class="tag">angular</span>
+                            <span class="tag">angularjs</span>
+                            <span class="tag">Angular 2+</span>
+                        </div>
+                    </div>
+                </div> -->
+                </div>
+            </div>
+            <div id="pagination" class="pagination-controls"></div>
+            <div id="repoCountSelection" class="repo-count-dropdown">
+                <select id="repoCountDropdown" class="form-select">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<script src="./scripts/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+    integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>

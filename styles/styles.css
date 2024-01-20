@@ -1,0 +1,312 @@
+:root {
+  /* Primary color scheme */
+  --primary-color: #007bff;
+  --primary-dark-color: #0056b3;
+  --primary-light-color: #e7f3ff;
+
+  /* Neutral colors */
+  --background-color: #f4f4f4;
+  --text-color: black;
+  --border-color: #e1e1e1;
+  --skeleton-base-color: #ddd;
+  --skeleton-shimmer-color: #eee;
+
+  /* Misc colors */
+  --tag-background-color: #428bca;
+  --active-button-bg-color: #007bff;
+  --active-button-text-color: white;
+  --hover-button-bg-color: #0056b3;
+  --hover-button-text-color: white;
+  --disabled-button-bg-color: #e9ecef;
+  --disabled-button-text-color: #cccccc;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--background-color);
+  margin: 0;
+  padding: 10px;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  
+}
+body {
+  scrollbar-width: none; 
+}
+
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+.profile-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 80px;
+}
+
+.avatar-container {
+  padding-right: 20px;
+  display: none;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.user-details h1 {
+  margin: 0;
+  padding: 0.125rem 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.githubCon, .location{
+  display:none;
+}
+
+.bio,
+.location,
+.twitter,
+.githubCon {
+  margin: 0;
+  padding: 0.125rem 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.twitter a,
+.githubCon a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.user-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+  background: var(--skeleton-base-color);
+  margin-bottom: 20px;
+  display: inline-block;
+  outline: 3px solid var(--skeleton-base-color);
+  border: 4px solid white;
+}
+
+.repositories {
+  margin-top: 20px;
+}
+
+.repo {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.repo h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+}
+
+.repo p {
+  margin: 0 0 10px 0;
+  font-size: 0.875rem;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  color: white;
+  background: var(--tag-background-color);
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.null-info {
+  color: var(--skeleton-base-color);
+  font-size: 0.875rem;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.read-more {
+  display: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.card:hover .read-more {
+  display: inline;
+}
+
+//loading functionality
+.skeleton-loader {
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.avatar-skeleton,
+.text-skeleton {
+  background-color: var(--skeleton-base-color);
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.avatar-skeleton {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.text-skeleton {
+  height: 20px;
+  width: 100%;
+}
+
+.text-skeleton.short {
+  width: 50%;
+}
+
+.text-skeleton.half {
+  width: 70%;
+}
+
+@keyframes loading {
+  0% {
+    background-color: var(--skeleton-shimmer-color);
+  }
+  50% {
+    background-color: var(--skeleton-base-color);
+  }
+  100% {
+    background-color: var(--skeleton-shimmer-color);
+  }
+}
+
+.skeleton-loader div {
+  animation: loading 1.5s infinite;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button,
+.pagination-controls select {
+  margin: 0 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  margin: 0;
+  padding: 5px 10px;
+  color: var(--primary-color);
+  background-color: white;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.pagination-controls button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination-controls button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.pagination-controls button:hover {
+  background-color: var(--hover-button-bg-color);
+  color: var(--hover-button-text-color);
+}
+
+.pagination-controls button.disabled {
+  color: var(--disabled-button-text-color);
+  background-color: var(--disabled-button-bg-color);
+  border-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+.pagination-controls button.active {
+  background-color: var(--active-button-bg-color);
+  color: var(--active-button-text-color);
+  border-color: var(--primary-color);
+}
+
+/* Dropdown Styling */
+.repo-count-dropdown {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#repoCountDropdown {
+  display: inline-block; /* Aligns dropdown inline */
+  width: 70px; /* Adjust width as needed */
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid var(--primary-color); /* Border color */
+  background-color: white;
+  color: var(--primary-color); /* Text color */
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for interactions */
+}
+
+#repoCountDropdown:hover,
+#repoCountDropdown:focus {
+  background-color: var(--primary-light-color); /* Light blue background on hover/focus */
+  border-color: var(--primary-dark-color); /* Darker border on hover/focus */
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Adjustments for small screens */
+@media (max-width: 576px) {
+  #repoCountDropdown {
+    width: 100%; /* Full width on small screens */
+  }
+}
