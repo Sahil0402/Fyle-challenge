@@ -24,3 +24,6 @@ If you've cloned the GitGlance repository and want to run it on your local machi
 
    ```javascript
    const token = 'YOUR_COPIED_TOKEN';
+
+## Live Demo
+You can see the live version of GitGlance at [gitglance-github.netlify.app](https://gitglance-github.netlify.app). This demo lets you interact with the app and see its features in action.
