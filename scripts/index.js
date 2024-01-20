@@ -1,6 +1,6 @@
 const githubBaseURL = "https://api.github.com";
 let userName = "freeCodeCamp";
-const token = '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';
+const token = '';
 
 const avatarURL = document.getElementById('userImage');
 const userDetails = document.querySelector('.user-details');

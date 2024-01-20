@@ -16,8 +16,6 @@
   --active-button-text-color: white;
   --hover-button-bg-color: #0056b3;
   --hover-button-text-color: white;
-  --disabled-button-bg-color: #e9ecef;
-  --disabled-button-text-color: #cccccc;
 }
 
 * {
@@ -255,14 +253,6 @@ body::-webkit-scrollbar {
   color: var(--hover-button-text-color);
 }
 
-.pagination-controls button:disabled,
-.pagination-controls button.disabled {
-  color: var(--disabled-button-text-color);
-  background-color: var(--disabled-button-bg-color);
-  border-color: var(--border-color);
-  cursor: not-allowed;
-}
-
 .pagination-controls button.active {
   background-color: var(--active-button-bg-color);
   color: var(--active-button-text-color);
@@ -290,7 +280,119 @@ body::-webkit-scrollbar {
   box-shadow: 0 2px 6px rgba(0, 123, 255, 0.5);
 }
 
-/* Adjustments for small screens */
+@media (max-width: 768px) {
+
+  #pageNumbers{
+    display:none;
+  }
+
+  .page-change-btn, #repoCountDropdown {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+  }
+
+  .page-change-controls {
+      flex-direction: column;
+      align-items: stretch;
+  }
+}
+
+@media (max-width: 576px) {
+  .pagination-controls {
+      flex-direction: column;
+  }
+  
+  #pageNumbers{
+    display:none;
+  }
+
+  .page-change-btn, #repoCountDropdown {
+      width: 100%;
+      padding: 8px;
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .avatar-container {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
+
+  .user-details h1 {
+    font-size: 1.2rem;
+  }
+
+  .bio, .location, .twitter, .githubCon {
+    font-size: 0.8rem;
+  }
+
+  .user-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .repo h3 {
+    font-size: 1rem;
+  }
+
+  .repo p {
+    font-size: 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
+  .pagination-controls {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .pagination-controls button, .pagination-controls select {
+    padding: 3px 7px;
+  }
+
+  .page-change-controls,
+  #pageNumbers {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Further adjustments for very small screens */
+  .avatar-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-details h1 {
+    font-size: 1rem;
+  }
+
+  .bio, .location, .twitter, .githubCon {
+    font-size: 0.75rem;
+  }
+
+  .repo h3 {
+    font-size: 0.9rem;
+  }
+
+  .repo p, .tag {
+    font-size: 0.7rem;
+  }
+}
 @media (max-width: 576px) {
   .page-change-controls,
   #pageNumbers {
@@ -298,7 +400,7 @@ body::-webkit-scrollbar {
   }
 
   #repoCountDropdown {
-    width: auto; /* Allows natural width on small screens */
-    margin-top: 10px; /* Adds space above the dropdown */
+    width: 70px; /* Allows natural width on small screens */
+    margin: 10px; /* Adds space above the dropdown */
   }
 }
